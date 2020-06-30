@@ -1,0 +1,30 @@
+[
+    // definition of a method that will return a bool value
+    {
+        "name": "getABoolValue",
+        "returns": true
+    },
+    // definition of a method that will return a integer value
+    {
+        "name": "getAIntegerValue",
+        "returns": 123
+    },
+    // definition of a method that will return a float value
+    {
+        "name": "getAFloatValue",
+        "returns": 1.0
+    },
+    // definition of a method that will return a more complex return value
+    // the return value is divided into a bool and a string (where a 64 bit is serialized into)
+    // additionally a integer parameter is given to the service functionality
+    {
+        "name": "getAOptionalTimestamp",
+        "params": {
+            "integer_parameter": 123
+        },
+        "returns": {
+            "valid": true,
+            "64bitTimeStamp": "value_of_timestamp"
+        }
+    }
+]

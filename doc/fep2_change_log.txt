@@ -1,0 +1,145 @@
+/**
+ *
+ * The Changelog file
+ *
+ * @file
+Copyright @ 2019 Audi AG. All rights reserved.
+
+    This Source Code Form is subject to the terms of the Mozilla
+    Public License, v. 2.0. If a copy of the MPL was not distributed
+    with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+If it is not possible or desirable to put the notice in a particular file, then
+You may include the notice in a location (such as a LICENSE file in a
+relevant directory) where a recipient would be likely to look for such a notice.
+
+You may add additional accurate notices of copyright ownership.
+ *
+ *
+ * 
+ *
+ */
+
+/**  
+
+\page fep_change_log FEP Change Log
+\verbatim
+====================================================================================================
+|     FEP SDK - Change Log File -
+|     Functional Engineering Platform SDK
+|     Copyright (c) AUDI AG
+====================================================================================================
+
+This file tracks the changes made within the FEP SDK.
+====================================================================================================
+Date:               OCT 2019
+Version:            FEP SDK 2.5.1 (will uses a_util 5.6.0 and DDL Library 4.4.0 )
+
+End of tracking changelog within this file! 
+Since 2.5.1 FEP SDK depends on 
+* FEP Participant Library,
+* FEP System Library
+* FEP Controller Library
+* FEP Metamodel Library
+Changelog tracking is within these libraries.
+
+====================================================================================================
+Date:               SEP 2019
+Version:            FEP SDK 2.4.1 (will uses a_util 5.6.0 and DDL Library 4.4.0 )
+
+----------------------------------------------------
+Known Problems:
+----------------------------------------------------
+    * [FEPSDK-2065] - Errornous call of unregister_thread leads to error messages
+    * [FEPSDK-1987] - FEP_SDK parses xml without respecting locale
+    * [FEPSDK-1349] - Mapping does not work with DDB
+    * [FEPSDK-1297] - StateNotification delivery to other participants is not reliable
+    * [FEPSDK-1258] - FEP Properties may be replaced by properties with another type
+    * [FEPSDK-1253] - IPropertyTree::GetRemoteProperty() fails if remote participant has just entered FS_IDLE
+    * [FEPSDK-1237] - WaitForSystemState incorrectly running into timeout
+    * [FEPSDK-1228] - [mapping] Different trigger for the same source does not work
+    * [FEPSDK-1189] - [fep_controller] Segmentation fault thru a DDL DTOR problem
+    * [FEPSDK-1167] - Launcher and controller raise incidents FSI_GENERAL_CRITICAL during shutdown
+    * [FEPSDK-1158] - Running a simulation with Mapping twice will lead to a crash
+    * [FEPSDK-1106] - cannot send global commands (stop, shutdown), if any of the participants is in a different state (see above)
+    * [FEPSDK-846] - [*] GetErrorLabel() mostly returns "(unknown)"
+    * [FEPSDK-744] - [TX] Transmit() is not aborted when using an output signal handle of a different FEP Element in the same process 
+
+----------------------------------------------------
+Bugfixes:
+----------------------------------------------------
+    * [FEPSDK-1099] - [mapping] enum transformation doesn't work
+    * [FEPSDK-1250] - local system clock discrete timestamp reset not working
+    * [FEPSDK-1261] - Data within StepDataAccess for 2.2 sender and 2.3 receiver using FEP MLSL Blockset does not work
+    * [FEPSDK-1269] - Scheduler not working as expected in simulation time (fixed time steps)
+    * [FEPSDK-1318] - local_system_simtime runs slower than wall clock
+    * [FEPSDK-1359] - RuntimeViolationStrategy is not applied if StepListener interface is used
+
+----------------------------------------------------
+Application changes:
+----------------------------------------------------
+    * [FEPSDK-928] - Create FEP example from code for evaluation cascade
+    * [FEPSDK-1183] - Optimize DDS settings for Big Samples
+    * [FEPSDK-1188] - fep_launcher shall be able to execute binaries from PATH environment variable
+    * [FEPSDK-1211] - Add C++/Common Language Infrastructure- support
+    * [FEPSDK-1264] - Doc update for Remote Starter Aliases and its usage
+    * [FEPSDK-1280] - [RPC] Correct description and parameter names
+    * [FEPSDK-1310] - [Examples] Adapt documentation of examples to new timing API
+
+
+====================================================================================================
+Date:               JUL 2019
+Version:            FEP SDK 2.4.0
+
+----------------------------------------------------
+Known Problems:
+----------------------------------------------------
+    * [FEPSDK-1987] - FEP_SDK parses xml without respecting locale
+    * [FEPSDK-1381] - Memory Leaks when accessing samples using LockData/UnlockData
+    * [FEPSDK-1359] - RuntimeViolationStrategy is not applied if StepListener interface is used
+    * [FEPSDK-1349] - Mapping does not work with DDB
+    * [FEPSDK-1320] - Wrong include in data_registry_rpc_intf.h
+    * [FEPSDK-1316] - [SystemLibrary] Signals cannot be read after system was launched
+    * [FEPSDK-1308] - Accessing input data with wrong type (non-matching size) is not reported as an error
+    * [FEPSDK-1297] - StateNotification delivery to other participants is not reliable
+    * [FEPSDK-1269] - Scheduler not working as expected in simulation time (fixed time steps)
+    * [FEPSDK-1262] - Transfer of large parts of FEP Property Tree is incomplete
+    * [FEPSDK-1258] - FEP Properties may be replaced by properties with another type
+    * [FEPSDK-1253] - IPropertyTree::GetRemoteProperty() fails if remote participant has just entered FS_IDLE
+    * [FEPSDK-1237] - WaitForSystemState incorrectly running into timeout
+    * [FEPSDK-1228] - [mapping] Different trigger for the same source does not work
+    * [FEPSDK-1189] - [fep_controller] Segmentation fault thru a DDL DTOR problem
+    * [FEPSDK-1167] - Launcher and controller raise incidents FSI_GENERAL_CRITICAL during shutdown
+    * [FEPSDK-1158] - Running a simulation with Mapping twice will lead to a crash
+    * [FEPSDK-1106] - cannot send global commands (stop, shutdown), if any of the participants is in a different state (see above)
+    * [FEPSDK-1099] - [mapping] enum transformation doesn't work
+    * [FEPSDK-900] - Participants sporadically hang for extended periods (mostly while using WiFi)
+    * [FEPSDK-846] - GetErrorLabel() mostly returns "(unknown)"
+    * [FEPSDK-744] - [TX] Transmit() is not aborted when using an output signal handle of a different FEP Element in the same process
+----------------------------------------------------
+Bugfixes:
+----------------------------------------------------
+    * [FEPSDK-1214] - Missing executable permissions of FEP SDK example starter scripts
+    * [FEPSDK-1218] - 'ITiming::RegisterStepListener' returns undocumented error 'ERR_NOT_FOUND'
+    * [FEPSDK-1199] - Wrong value for FEP_CLOCKSERVICE_MAIN_CLOCK does not lead to an incident
+    * [FEPSDK-1161] - Problems during re-linking of NDDS libraries
+    * [FEPSDK-1234] - [Launcher] Improve error output on remote starting
+    * [FEPSDK-1186] - [DOC] Equalize range of valid DomainID numbers everywhere
+    * [FEPSDK-1318] - local_system_simtime runs slower than wall clock
+
+----------------------------------------------------
+Application changes:
+----------------------------------------------------
+
+    * [FEPSDK-1207] - [FEP System Library] Create FEP System Library and Design System API
+    * [FEPSDK-1149] - Create convinience fep::System class to control a system
+    * [FEPSDK-1255] - Restructuring Documentation for FEP2 to FEP 3 Design
+    * [FEPSDK-1234] - [Launcher] Improve error output on remote starting
+    * [FEPSDK-1227] - [timing] throw incident if entering error state because of step_listener
+    * [FEPSDK-1225] - Refactoring FEP 30 timing example
+    * [FEPSDK-1131] - Adapt the Scheduler (local_time_based_scheduler) to raise incidents
+    * [FEPSDK-1186] - [DOC] Equalize range of valid DomainID numbers everywhere
+    * [FEPSDK-1236] - FEP 3 - Add the possibility to reset a Job
+                      => Rework of ParticipantFEP2 ... no dependencies to cModule anymore as base for FEP 3 development
+    * [FEPSDK-1224] - Rework include header guards for FEP 3. Use "#pragma once".
+                      
